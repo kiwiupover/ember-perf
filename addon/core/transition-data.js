@@ -43,7 +43,9 @@ prototype.routeFinishedSetup = function routeFinishedSetup(route) {
 };
 
 prototype._viewAdded = function _viewAdded(view, index) {
-  this._lastActivatedRoute.views.push(index);
+  if (this._lastActivatedRoute) {
+    this._lastActivatedRoute.views.push(index);
+  }
 };
 
 export default TransitionData;
